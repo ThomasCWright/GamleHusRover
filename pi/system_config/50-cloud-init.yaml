@@ -5,28 +5,13 @@
 # network: {config: disabled}
 network:
   renderer: networkd
-#  wifis:
-#    wlan0:
-#      optional: true
-#      access-points: 
-#        "pi_wifi":
-#          password: "12345678"
   ethernets:
     eth0:
       dhcp4: false
     eth1:
       dhcp4: false
-      gateway4: 192.168.1.1
-    wlan0:
-      dhcp4: false
   bridges:
     br0:
-      dhcp4:  true
-      interfaces: [eth0, eth1, wlan0]
-#      pan0rameters:
-#        stp: false
-#        forward-delay: 0
-      gateway4: 192.168.1.1
-#      nameservers:
-#        search: []
+      dhcp4:  false
+      interfaces: [eth0, eth1]
   version: 2
